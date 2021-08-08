@@ -84,7 +84,7 @@ public class OccuranceValue {
 		 * {4=1, 5=2, 6=3} [4, 5, 6] [1, 2, 3]
 		 */
 		if(dup1.size()==dup2.size()) 
-			return true;
+			return true; 
 		else 
 			return false;	
 	}

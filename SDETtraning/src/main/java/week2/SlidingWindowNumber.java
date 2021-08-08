@@ -32,13 +32,10 @@ import junit.framework.Assert;
 
 public class SlidingWindowNumber {
 
-
-
 	//@Test
 	public void test1() {
 		int[] arr= {1,2,3,1};
 		int k=3;
-		
 		Assert.assertEquals(true, duplicateCheck(arr,k));
 
 	}

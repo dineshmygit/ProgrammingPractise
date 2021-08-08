@@ -15,7 +15,7 @@ import junit.framework.Assert;
 2. Test data set
   	input:{3,0,1}
   	Target:Find the missing number
-  	output:2
+  	output:2 
 
 3. Do you know how to solve
    Brute force
@@ -56,6 +56,7 @@ public class MissingValueArr {
 	//@Test
 	public void edgeCase() {
 		//Two number missing
+		//
 		int[] arr= {1,3,5};
 	}
 

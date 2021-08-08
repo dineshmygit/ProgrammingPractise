@@ -1,5 +1,7 @@
 package assesment1;
 
+import static org.junit.Assert.assertArrayEquals;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -38,7 +40,7 @@ public class IntersectionOfArray {
 	public void test1() {
 		int[] num1= {1,2,2,1};
 		int[] num2= {2,2,};
-	    Assert.assertEquals( intersectioTwoArrays(num1,num2), num2);
+	    assertArrayEquals( intersectioTwoArrays(num1,num2),new int[] {1,2});
 	}
 
 	@Test
@@ -47,6 +49,7 @@ public class IntersectionOfArray {
 		int[] num2= {9,4,9,8,4};
 		int[] retrunArray=intersectioTwoArrays(num1,num2);
 		 System.out.println(Arrays.toString(retrunArray));
+		 assertArrayEquals(retrunArray, new int[] {4,9});
 	}
 
 	/* time complexity :O(3n)=>O(n)

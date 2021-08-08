@@ -1,19 +1,23 @@
 package template;
 
+import java.util.Arrays;
+
 import org.junit.Test;
 
+import junit.framework.Assert;
+
 /*
-1. Understand the problem
-  
+1. Understand the problem 
 2. Test data set
   	input:
   	Target:
   	output:
-  	
 3. Do you know how to solve
 4. Ask for hints and constraints
 5. Alternative solution
-   1.Brute force
+   time complexity:O(n^2)
+   space complexity : O(n)  
+   
 6. Know O notation
 7. write Pseudo code
 8. Implement the code
@@ -23,24 +27,22 @@ import org.junit.Test;
 public class PgmCheck {
 
 	@Test
-	public void positiveCase() {
-		
-
-	}
-
-	//@Test
-	public void negativeCase() {
+	public void test1() {
 		
 	}
 
 	//@Test
-	public void edgeCase() {
-
-	}
-
-	private void funCal() {
+	public void test2() {
 		
 	}
 
+	//@Test
+	public void test3() {
 
+	}
+
+	private void functionName() {
+		
+		
+	}
 }

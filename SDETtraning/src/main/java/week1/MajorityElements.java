@@ -13,7 +13,7 @@ import org.junit.Test;
   	Target:majority element
   	output:5 return the majority int number
   	
-3. Do you know how to solve
+3. Do you know how to solve 
    yes -> brute force
 4. Ask for hints and constraints
    if value is {1,1,2,2},{},{1,2,3,4},{1}

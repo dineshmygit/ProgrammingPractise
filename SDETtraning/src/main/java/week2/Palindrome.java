@@ -1,4 +1,4 @@
-package week1;
+package week2;
 
 import org.junit.Test;
 /*
@@ -8,7 +8,7 @@ import org.junit.Test;
   	input:121
   	Target:check whether it is palindrom i.e 121 after reversing
   	output: true if 121
-3. Do you know how to solve
+3. Do you know how to solve.
    a.Brute force
 4. Ask for hints and constraints
 
