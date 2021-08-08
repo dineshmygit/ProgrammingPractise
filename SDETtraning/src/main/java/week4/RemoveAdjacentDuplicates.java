@@ -1,4 +1,4 @@
-package Week4;
+package week4;
 
 import java.util.Iterator;
 import java.util.Stack;

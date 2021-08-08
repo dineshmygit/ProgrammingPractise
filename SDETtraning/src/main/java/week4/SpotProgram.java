@@ -1,4 +1,4 @@
-package Week4;
+package week4;
 
 public class SpotProgram {
 	public class Node{ 
