@@ -6,13 +6,13 @@ import java.util.Map;
 import org.junit.Test;
 
 public class ConferanceSchedule {
-	//@Test
+	@Test
 	public void test1() {
 		int[] scheduleStart= {1,1,2};
 		int[] scheduleStop=  {3,2,4};
 		findConferanceSchedule(scheduleStart,scheduleStop);
 	}
-	//@Test
+	@Test
 	public void test2() {
 		int[] scheduleStart= {1,1,2,3};
 		int[] scheduleStop=  {2,3,3,4};
