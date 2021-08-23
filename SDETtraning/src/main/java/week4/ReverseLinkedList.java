@@ -1,9 +1,7 @@
 package week4;
 
 import org.junit.Test;
-
 public class ReverseLinkedList {
-
 	//Creating a node
 	public class Node{
 		int value;
@@ -14,20 +12,17 @@ public class ReverseLinkedList {
 			next=null;
 		}
 	}
-
 	//when add a new node
 	public Node addNewNode(int val) {
 		//newNode.next= null;
 		return new Node(val);
 	}
-
 	public void printAllNodes(Node node) {
-		while(node!=null) {
+		while(node!=null) {     
 			System.out.println(node.value);
 			node=node.next;
 		}
 	}
-	
 	public Node reverseNode(Node node) {
 		Node prev=null,current=node,next=null;
 		while(current!=null) {
@@ -37,8 +32,7 @@ public class ReverseLinkedList {
 			current=next;
 		}
 		return prev;
-	}
-	
+	}	
 	@Test
 	public void test1() {
 		Node head=addNewNode(10);

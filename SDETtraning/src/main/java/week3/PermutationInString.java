@@ -17,6 +17,8 @@ package week3;
  
  */
 
+import java.util.ArrayDeque;
+
 import org.junit.Test;
 
 public class PermutationInString {
@@ -27,6 +29,7 @@ public class PermutationInString {
 	}
 	private void findPermutationSubstring(String str) {
       str.contains("din");		
+      ArrayDeque<Character> arr= new ArrayDeque<Character>();
 	}
 	
 }

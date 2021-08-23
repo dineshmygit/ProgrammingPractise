@@ -29,9 +29,7 @@ import junit.framework.Assert;
 9. Debug and Test
  */
 public class IntersectionArray {
-
-
-	@Test
+	@Test  //positive data
 	public void positiveCase() {
 		int[] arr1 = { 1,3,3,6 };
 		int[] arr2 = { 3,3 };
@@ -41,7 +39,7 @@ public class IntersectionArray {
 		  // Assert.assertEquals(intersection, output);
 	}
 
-	@Test
+	@Test //Negative data
 	public void negativeCase() {
 		int[] arr1 = { 3,3,1 };
 		int[] arr2 = { 1,3,3,6 };
@@ -49,7 +47,7 @@ public class IntersectionArray {
 		System.out.println(Arrays.toString(intersection));
 	}
 
-	@Test
+	@Test //Edge cases
 	public void edgeCase() {
 		int[] arr1 = { 1,1 };
 		int[] arr2 = { 1,1 };

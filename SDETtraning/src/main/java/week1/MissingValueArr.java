@@ -1,5 +1,6 @@
 package week1;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
@@ -16,6 +17,8 @@ import junit.framework.Assert;
   	input:{3,0,1}
   	Target:Find the missing number
   	output:2 
+  	input : int[]
+  	return :
 
 3. Do you know how to solve
    Brute force
@@ -44,6 +47,7 @@ public class MissingValueArr {
 	public void positiveCase() {
 		int[] arr= {21,23,24};
 		Assert.assertEquals(funCal(arr), 22);
+		
 
 	}
 
@@ -65,7 +69,7 @@ public class MissingValueArr {
 	 * Space complexity:O(n)
 	 */	
 	private int funCal(int[] arr) {
-
+		
 		int i, tmp=0,missingVal=0;
 		Set<Integer> dup1 = new LinkedHashSet<Integer>();
 		for (i = 0; i < arr.length; i++)
