@@ -48,7 +48,7 @@ public class ConferanceSchedule {
 					firstMeetingEnd=scheduleStart[i];
 				}		
 			}else {
-				if(firstMeetingEnd<=scheduleStart[i]) {
+				if(firstMeetingEnd<=scheduleStart[i] ) {
 					map.put(scheduleStart[i], scheduleStop[i]);	
 					firstMeetingEnd=scheduleStop[i];
 				}
