@@ -40,9 +40,20 @@ public class ReverseArrayQueries {
 					reverseList.add(arr.get(j));
 					i=end;
 				}
-			}else {
-				reverseList.add(arr.get(i));
-			}
+			}else reverseList.add(arr.get(i));
+		}
+		return reverseList;
+	}
+	private List<Integer> reverseArrayUsingTwoPointer(List<Integer> arr, int start, int end) {
+		int tmp=0;
+		List<Integer> reverseList=new ArrayList<Integer>();
+		for (int i = 0; i < arr.size(); i++) {
+			if(i==start) {
+				while(start<=end) {
+					tmp=arr.get(start);
+					reverseList.add(arr.get(start));
+				}
+			}else reverseList.add(arr.get(i));
 		}
 		return reverseList;
 	}
