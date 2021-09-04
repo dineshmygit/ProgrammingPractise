@@ -1,5 +1,7 @@
 package Week6sep;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.Stack;
 
 import org.junit.Test;
@@ -10,21 +12,24 @@ public class RemoveAdjacentDuplicatesInString {
 	public void test1() {
 		String s ="deeedbbcccbdaa";
 		int k=3;
-		removeDuplicate(s,k);
+		//removeDuplicate(s,k);
+		findDuplicatesUsingMap(s,k);
 	}
 
 	@Test
 	public void test2() {
 		String s ="abcd";
-		int k=2;
-		removeDuplicate(s,k);
+		int k=1;
+		//removeDuplicate(s,k);
+		findDuplicatesUsingMap(s,k);
 	}
 
 	@Test
 	public void test3() {
 		String s ="deeedbbcccbdaad";
 		int k=3;
-		removeDuplicate(s,k);
+		//removeDuplicate(s,k);
+		findDuplicatesUsingMap(s,k);
 	}
 	/*Time complexity : O(n)
 	 * Space complexity:O(n)
@@ -59,5 +64,21 @@ public class RemoveAdjacentDuplicatesInString {
 		for (int i = 0; i < length; i++)
 			sb.append(s1.pop());
 		System.out.println(sb.reverse().toString());
+	}
+	public void findDuplicatesUsingMap(String s,int k) {
+		LinkedHashMap<Character,Integer>map=new LinkedHashMap<>();
+		for (int i = 0; i < s.length(); i++) {
+			map.put(s.charAt(i), map     .getOrDefault(s.charAt(i), 0)+1);
+			if(map.containsValue(k)) map.remove(s.charAt(i));
+		}
+		StringBuilder sb1=new StringBuilder();
+		for(Map.Entry<Character,Integer>map2:map.entrySet()) {
+		 int value=map2.getValue();
+			while(value>0) {
+				sb1.append(map2.getKey());
+				value--;
+			}
+		}
+		System.out.println(sb1);
 	}
 }
