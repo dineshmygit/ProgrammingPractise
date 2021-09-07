@@ -15,6 +15,12 @@ public class LargestSumInAnArray {
 		int[] data= {1,-5,2,-3,7,1};
 		findLargestSumKAFull(data);
 	}
+	@Test
+	public void test3() {
+		int[] data= {1,7,4,12,-13,1};
+		int k=15;
+		findLargestSumBFK(data,k);
+	}
 
 	/*Kandanes Algorithm
 	 * Time complexity : O(n)
@@ -54,6 +60,18 @@ public class LargestSumInAnArray {
 			for (int j = i+1; j < data.length; j++) {
 				current_sum+=data[j];
 				if(max_sum<current_sum) max_sum=current_sum;
+			}
+		}
+		System.out.println(max_sum);
+	}
+	
+	private void findLargestSumBFK(int[] data,int k) {
+		int current_sum=0,max_sum=Integer.MIN_VALUE;
+		for (int i = 0; i < data.length; i++) {
+			current_sum=data[i];
+			for (int j = i+1; j < data.length; j++) {
+				current_sum+=data[j];
+				if(max_sum<current_sum && current_sum<k) max_sum=current_sum;
 			}
 		}
 		System.out.println(max_sum);

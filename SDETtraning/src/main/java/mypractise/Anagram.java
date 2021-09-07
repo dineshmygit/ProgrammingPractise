@@ -15,8 +15,10 @@ public class Anagram {
 
 	@Test
 	public void test2() {
-
+		String str="kishore";
+		findAnagramString(str);
 	}
+
 
 	@Test
 	public void test3() {
@@ -25,18 +27,25 @@ public class Anagram {
 	}
 
 	private void findAnangram(String[] str) {
-		  char[] ch;
-		  int[] ascii=new int[26];
-		  for (int i = 0; i < ascii.length; i++) {
-			str[i].toCharArray();
+		char[] ch= {};
+
+		int[] ascii=new int[26];
+		//for(char c:str.)
+
+			for(int i = 0; i < str.length; i++)
+			{
+				ch=str[i].toCharArray();
+
+
+			}
+		System.out.println(ch);
+	}
+	private void findAnagramString(String str) {
+		int[] arr=new int[26];
+		for(char c:str.toCharArray()) {
+			arr[c-'a']++;
 		}
-		  
-		  for(int i = 0; i < str.length; i++)
-		    {
-		       ch=str[i].toCharArray();
-		       
-		       
-		    }
+
 	}
 
 }

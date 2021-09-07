@@ -36,5 +36,6 @@ public class LongestSubstringDistinct {
 			//	map.remove(arr[left])
 			}
 		}
+		System.out.println(count);
 	}
 }

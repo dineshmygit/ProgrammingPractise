@@ -9,7 +9,7 @@ public class DecodingString {
 	@Test
 	public void test3() {
 		String data="3[a]2[bc]";
-		Assert.assertEquals(decodeStringValues(data), "accaccacc");
+		decodeStringValues(data);
 	}
 
 	StringBuilder sb=new StringBuilder();
@@ -37,7 +37,7 @@ public class DecodingString {
 	 * 2[ab]
 	 * abab
 	 */
-	private String decodeStringValues(String data) {
+	private void decodeStringValues(String data) {
 		int firstOpeningIndex=0,lastClosingIndex=0;
 		for (int i = 0; i < data.length(); i++) {
 			lastClosingIndex=data.lastIndexOf(']');
@@ -46,15 +46,12 @@ public class DecodingString {
 			if(Character.isDigit(data.charAt(firstOpeningIndex-1))) {
 				Character num=data.charAt(firstOpeningIndex-1);
 				printSubstring(num,substring);
-				System.out.println(num);
+				System.out.println(substring);
 				
 			}
 		}
-
-
-		return "";
+		//return ;
 	}
-
 	private void printSubstring(Character num, String substring) {
 		int num1=Integer.parseInt(String.valueOf(num));
 		StringBuilder sb=new StringBuilder();
