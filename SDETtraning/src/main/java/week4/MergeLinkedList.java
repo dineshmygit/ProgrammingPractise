@@ -33,7 +33,7 @@ public class MergeLinkedList {
 		Node merged=new Node();
 		Node current=merged;
 		while(node1!=null && node2!=null) {
-			if(node1.value<node2.value) {
+			if(node1.value<=node2.value) {
 				current.next=node1;
 				node1=node1.next;
 			}else {
@@ -42,7 +42,14 @@ public class MergeLinkedList {
 			}
 			current=current.next;
 		}
-		current.next = node1 == null ? node2 : node1;
+		
+		if (node1 == null) {
+            current.next = node2;
+        }
+  
+        else if (node2 == null) {
+            current.next = node1;
+        }
 		return merged.next;
 	}
 
@@ -50,10 +57,10 @@ public class MergeLinkedList {
 	public void test1() {
 		Node head1=addNewNode(1);
 		head1.next=addNewNode(3);
-		head1.next=addNewNode(5);
+		head1.next.next=addNewNode(5);
 		Node head2=addNewNode(2);
 		head2.next=addNewNode(4);
-		head2.next=addNewNode(6);
+		head2.next.next=addNewNode(6);
 		Node mergeNodes = mergeNodes(head1,head2);
 		printAllNodes(mergeNodes);
 	}

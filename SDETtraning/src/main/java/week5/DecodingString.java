@@ -1,8 +1,8 @@
 package week5;
 
-import org.junit.Test;
+import java.util.Stack;
 
-import junit.framework.Assert;
+import org.junit.Test;
 
 public class DecodingString {
 
@@ -12,25 +12,6 @@ public class DecodingString {
 		decodeStringValues(data);
 	}
 
-	StringBuilder sb=new StringBuilder();
-	private String decodeString(String data) {
-		if(!data.contains("]")) {
-			return "";
-		}
-		int count=1;
-		int Openindex=0,closeIndex=0;
-		closeIndex=data.lastIndexOf(']');
-		Openindex=data.lastIndexOf('[');
-		if(Character.isDigit(data.charAt(Openindex-1))) {
-			count=data.charAt(Openindex-1);
-		}
-		while(count<=1)
-			sb.append(data.substring(Openindex+1, closeIndex));
-		decodeString(data.replace(data.substring(Openindex, closeIndex+1), sb.toString()));
-		System.out.println(sb.toString());
-		return sb.toString();
-	}
-
 	/*
 	 * 3[a]2[bc] 
 	 * aaabcbc
@@ -38,26 +19,35 @@ public class DecodingString {
 	 * abab
 	 */
 	private void decodeStringValues(String data) {
-		int firstOpeningIndex=0,lastClosingIndex=0;
-		for (int i = 0; i < data.length(); i++) {
-			lastClosingIndex=data.lastIndexOf(']');
-			firstOpeningIndex=data.lastIndexOf('[');
-			String substring = data.substring(firstOpeningIndex+1, lastClosingIndex);
-			if(Character.isDigit(data.charAt(firstOpeningIndex-1))) {
-				Character num=data.charAt(firstOpeningIndex-1);
-				printSubstring(num,substring);
-				System.out.println(substring);
-				
+		Stack<Integer> numStack=new Stack<Integer>();
+		Stack<String> strStack=new Stack<String>();
+		int index=0;
+		StringBuilder res=new StringBuilder();
+		while(index<data.length()) {
+			if(Character.isDigit(data.charAt(index))){
+				int num=0;
+				while(Character.isDigit(data.charAt(index))) {					
+				num=num*10 + (data.charAt(index) - '0');
+				index++;
+				}
+				numStack.push(num);
+			}else if(data.charAt(index)=='[') {
+				strStack.push(res.toString());
+				res=new StringBuilder("");
+			}else if(data.charAt(index)==']') {
+				StringBuilder temp=new StringBuilder();
+				int len=numStack.pop();
+				for (int i = 0; i < len; i++) {
+					temp.append(strStack.pop());
+				}
+				res.append(temp);
+				index++;
+			 }else {
+				res.append(data.charAt(index));
+				index++;
 			}
+			
 		}
-		//return ;
-	}
-	private void printSubstring(Character num, String substring) {
-		int num1=Integer.parseInt(String.valueOf(num));
-		StringBuilder sb=new StringBuilder();
-		while(num!=0) {
-			sb.append(substring);
-		num--;
-		}
+		System.out.println(res.toString());
 	}
 }
