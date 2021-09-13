@@ -1,4 +1,4 @@
-package week2sep;
+package week7sep;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -12,7 +12,7 @@ public class SortColors {
 	@Test
 	public void test1() {
 		int[] nums= {2,0,2,1,1,0};
-		findColors(nums);
+		findColorsSecMethod(nums);
 	}
 
 	@Test
@@ -44,5 +44,26 @@ public class SortColors {
 		for (int i = 0; i < nums.length; i++) {
 			nums[i]=result.get(i);
 		}
+	}
+	private void findColorsSecMethod(int[] nums) {
+		int red=0,blue=0,green=0;
+		for (int i = 0; i < nums.length; i++) {
+			if(nums[i]==0) red++;
+			else if(nums[i]==1) blue++;
+			else green++;
+		}
+		for (int i = 0; i < nums.length; i++) {
+			if(red>0) {
+				nums[i]=0;
+				red--;
+			}else if(blue>0) {
+				nums[i]=1;
+				blue--;
+			}else {
+				nums[i]=2;
+				green--;
+			}
+		}
+		
 	}
 }

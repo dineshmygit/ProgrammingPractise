@@ -1,8 +1,8 @@
-package Week1sep;
+package Week6sep;
 
 import org.junit.Test;
 
-import Week1sep.ReverseLinkedList.Node;
+import Week6sep.ReverseLinkedList.Node;
 
 public class ReverseLinkedList {
 

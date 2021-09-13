@@ -1,4 +1,4 @@
-package Week1sep;
+package Week6sep;
 
 import java.util.Collections;
 import java.util.LinkedList;

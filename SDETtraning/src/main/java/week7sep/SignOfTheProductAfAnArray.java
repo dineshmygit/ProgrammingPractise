@@ -1,4 +1,4 @@
-package week2sep;
+package week7sep;
 
 import org.junit.Test;
 
@@ -8,7 +8,7 @@ public class SignOfTheProductAfAnArray {
 	 * */
 	@Test
 	public void test1() {
-		int[] nums= {1,5,0,2,-3};
+		int[] nums= {9,72,34,29,-49,-22,-77,-17,-66,-75,-44,-30,-24};
 		findProduct(nums);
 	}
 
@@ -29,19 +29,15 @@ public class SignOfTheProductAfAnArray {
 	 * 
 	 * */
 	private int findProduct(int[] nums) {
-		int resultOne=0,resultTwo=0;
+		int result=1;
 		for (int i = 0; i < nums.length; i++) {
-			resultOne=nums[i];
-			for (int j = 0; j < nums.length; j++) {
-				resultTwo+=nums[i]*nums[j];
-			}	
+			if(nums[i]==0) return 0;
+			else if(nums[i]<0) nums[i]=-1;
+			else nums[i]=1;
+			result*=nums[i];
 		}
-		if(resultTwo==0) {
-		return 0;
-		}else if(resultTwo>0) {
-		return 1;
-		}else {
+		if(result==1) return 1;
+		else
 		return -1;
-		}
 	}
 }
