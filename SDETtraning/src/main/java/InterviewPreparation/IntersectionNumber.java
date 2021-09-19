@@ -62,7 +62,7 @@ public class IntersectionNumber {
 			    }else if(data1[first]>data2[second]) {
 				second++;
 			}else {
-				first++;
+				  first++ ;
 			}
 		}
 		System.out.println(Arrays.toString(Arrays.copyOfRange(data1, 0, index)));
