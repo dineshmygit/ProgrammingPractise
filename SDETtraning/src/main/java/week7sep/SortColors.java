@@ -1,8 +1,10 @@
 package week7sep;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import org.junit.Test;
 
@@ -25,6 +27,8 @@ public class SortColors {
 
 	}
 	private void findColors(int[] nums) {
+		Map<Character,Integer> map=new HashMap<Character,Integer>();
+		//map.con
 		List<Integer>l1=new ArrayList<Integer>();
 		List<Integer>l2=new ArrayList<Integer>();
 		List<Integer>l3=new ArrayList<Integer>();
