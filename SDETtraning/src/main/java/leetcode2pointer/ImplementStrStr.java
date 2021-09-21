@@ -10,7 +10,7 @@ public class ImplementStrStr {
 		String haystack="hello";
 		String needle="ll";
 		int result=findFirstOccurance(haystack,needle);
-	}
+	}    
 
 	private int findFirstOccurance(String haystack, String needle) {
 		/*IndexOf function will by default is empty will return 0
