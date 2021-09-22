@@ -33,24 +33,17 @@ public class GasStation {
 		else return -1;
 	}
 	private int findStartStationNew(int[] gas, int[] cost) {
-		int start=0, sum=0,breakPt=gas.length,i=0;
-		while(breakPt>0) {
-			if(i>gas.length-1) {
-				i=0;
-			}
-			start=gas[i];
-			sum=start-cost[i]+gas[i+1];
-			if(sum>0) {				
-				i++;
-				breakPt--;
-				continue;
-			} 
-			else {
-				i++;
-				breakPt=gas.length;
-			} 		
+		int mid=0,add1=0,add2=0,result=0;
+		mid=(0+gas.length-1)/2;
+		for (int i = 0; i <= mid; i++) {
+			add1+=gas[i];
 		}
-		return 0;
+		for (int i = mid+1; i < cost.length; i++) {
+			add2+=gas[i];
+		}
+		result=add2-add1;
+		if(result>=0) return result;
+		else return -1;
 	}
 
 }
