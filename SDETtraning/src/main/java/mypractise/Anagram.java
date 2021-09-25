@@ -28,15 +28,11 @@ public class Anagram {
 
 	private void findAnangram(String[] str) {
 		char[] ch= {};
-
 		int[] ascii=new int[26];
 		//for(char c:str.)
-
 			for(int i = 0; i < str.length; i++)
 			{
 				ch=str[i].toCharArray();
-
-
 			}
 		System.out.println(ch);
 	}
@@ -45,7 +41,5 @@ public class Anagram {
 		for(char c:str.toCharArray()) {
 			arr[c-'a']++;
 		}
-
 	}
-
 }
