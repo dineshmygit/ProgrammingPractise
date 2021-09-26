@@ -18,24 +18,24 @@ public class GroupAnagrams {
 	}
 
 	private void isGroupAnagram(String[] strs) {
-		Map<Map<Character,Integer>,List<String>> map=new HashMap<>();
+		Map<String,List<String>> map=new HashMap<>();
 		for (int i = 0; i < strs.length; i++) {
-			Map<Character,Integer> innerMap=new HashMap<>();
-			char[] ch=strs[i].toCharArray();
-			for (int j = 0; j < ch.length; j++) {
-				innerMap.put(ch[j], innerMap.getOrDefault(ch[j], 0)+1);
-			}
-			if(map.containsKey(innerMap)) {
-				List<String> list = map.get(innerMap);
+			char[] arr=strs[i].toCharArray();
+			Arrays.sort(arr);
+			String word = new String(arr);
+			String word1 = arr.toString();
+			System.out.println(word);
+			System.out.println(word1);
+			if(map.containsKey(word)) {
+				List<String> list = map.get(word);
 				list.add(strs[i]);
-				map.put(innerMap, list);
+				map.put(word, list);
 			}else {
 				List<String> groupList=new ArrayList<>(Arrays.asList(strs[i]));
-				map.put(innerMap, groupList);
+				map.put(word, groupList);
 			}
 		}
 		List<List<String>> resultList=new ArrayList<>(map.values());
 		System.out.println(resultList);
 	}
-
 }
