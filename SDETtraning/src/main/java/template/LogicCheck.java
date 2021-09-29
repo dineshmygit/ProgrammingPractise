@@ -45,6 +45,8 @@ public class LogicCheck {
 	}
 	//	@Test
 	public void NextNumber() {
+		
+		
 		int[] arr= {1,1,3,3,5,5,7,7};
 		Set<Integer> set=new HashSet<Integer>();
 		int count=0;
