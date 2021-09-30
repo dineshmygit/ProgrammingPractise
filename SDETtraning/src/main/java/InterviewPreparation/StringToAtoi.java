@@ -5,7 +5,7 @@ import org.junit.Test;
 public class StringToAtoi {
 	@Test
 	public void test1() {		
-		String s="1";
+		String s="1abc>>";
 		myAtoi(s);
 	}
 
@@ -18,7 +18,7 @@ public class StringToAtoi {
 			return 0;
 		}else {
 			String result=s.trim();
-			String result1=result.replaceAll("[a-zA-z]", "");
+			String result1=result.replaceAll("[^a-zA-z]", "");
 			String result2=result1.replaceAll("\\s", "");
             if(result2.isEmpty()) return 0;
 			double num=Double.parseDouble(result2);
