@@ -70,7 +70,7 @@ public class SquareRootNumber {
 	 *  return the least number
 	 *  
 	 *  */
-	private int findSquareRootNumberUsingBinary(int data) {
+	private int findSquareRootNumberUsingBinary(int data   ) {
 		if(data<0)throw new RuntimeException("Invalid input");
 		else if(data<2) return data; 
 		else {

@@ -1,6 +1,8 @@
 package InterviewPreparation;
 
 import java.util.Arrays;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 import org.junit.Test;
 
@@ -9,9 +11,9 @@ public class TwoSumProblem {
 	/*Comments*/
 	@Test
 	public void test1() {
-		int[] nums= {-1,-2,0,4};
-		int k=-2;
-		System.out.println(Arrays.toString(findTwoSumTwoPointer(nums,k)));
+		int[] nums= {2,7,11,15};
+		int k=9;
+		System.out.println(Arrays.toString(findTwoSumTwoPointerMap(nums,k)));
 	}
 
 	@Test
@@ -69,4 +71,17 @@ public class TwoSumProblem {
 		System.out.println(Arrays.toString(res));
 		return res;
 	}
+	private int[] findTwoSumTwoPointerMap(int[] nums,int target) {
+		Map<Integer,Integer> map = new LinkedHashMap<>();
+		System.out.println(map.size());
+        for(int i=0; i<nums.length;i++){
+            int value=target-nums[i];
+            if(map.containsKey(value)){
+                return new int[] {map.get(value),i};
+            }else{
+                 map.put(nums[i],i); 
+            }
+        }
+        return new int[] {};
+	}     
 }
