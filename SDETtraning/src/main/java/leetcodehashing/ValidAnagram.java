@@ -23,6 +23,7 @@ public class ValidAnagram {
 	//Time complexity:O(n) Spacecomplexity:O(1)
 	private Object isAnagram(String s, String t) {
 		 int[] arr=new int[26];
+		 
 	        if(s.length()!=t.length()) return false;
 	        for(int i=0;i<s.length();i++){
 	           arr[s.charAt(i)-'a']++; 
@@ -32,7 +33,9 @@ public class ValidAnagram {
 				if(arr[i]==0) continue;
 				else return false;
 			}
-		return true;
+		
+	        return true;
+		
 	}
 	//Time complexity:O(n)
 	private Object isAnagramUsingMap(String s, String t) {
